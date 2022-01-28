@@ -188,9 +188,24 @@ while opcion != "4":
       opc3=helper.menu(["1) Ingreso","2) Consulta","3) Salir"],["*"*20, "MANTENIMIENTO DE EMPLEADOS", "*"*20])
       os.system("cls")
       if opc3 == "1":
-        print("*"*20,"INGRESO DE EMPLEADOS","*"*20)
-        nombreEMP = input("Ingrese nombre del empleado: ")
-        cedempleado = int(input("Ingrese la cedula del empleado: "))
+        while True:
+          os.system("cls")
+          print("*"*20,"INGRESO DE EMPLEADOS","*"*20)
+          nombreEMP = input("Ingrese nombre del empleado: ")
+          if len(nombreEMP)>=5 and len(nombreEMP)<=20:
+            break
+          else:
+            print("numero de caracteres invalidos, vuelva a ingresar: ")
+        while True:
+          os.system("cls")
+          print("*"*20,"INGRESO DE EMPLEADOS","*"*20)
+          cedempleado = input("Ingrese la cedula del empleado: ")
+          if len(cedempleado)>=5 and len(cedempleado)<=20:
+            int(cedempleado)
+            break
+          else:
+            print("numero de caracteres invalidos, vuelva a ingresar: ")
+        
         while True:
           carempleado = int(input("Ingrese el codigo del cargo del empleado: "))
           Ca = Validaciones.busCargo(carempleado)
@@ -228,3 +243,4 @@ while opcion != "4":
         input("Pulse cualquier tecla para continuar: ")
   else:
         print("Gracias por visitarnos")
+
